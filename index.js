@@ -63,7 +63,7 @@ app.post('/', express.json(), (req,res)=>{
         var allValues = agent.context.get("awaiting_parameters").parameters
         console.log(allValues);
         //send request by getting parameters from dialogflow  and get the answer
-        axios
+      /*  axios
         .post('http://127.0.0.1:5000/crop_predictor', {
             
               /*  "N":allValues['nitrogen'], 
@@ -72,7 +72,7 @@ app.post('/', express.json(), (req,res)=>{
                 "temperature":allValues['temperature'],
                 "humidity": allValues['humidity'], 
                 "ph":allValues['ph'],
-                "rainfall": allValues['rainfall']*/
+                "rainfall": allValues['rainfall']
     
                "N":85, 
                 "P":58,
@@ -94,8 +94,12 @@ app.post('/', express.json(), (req,res)=>{
         })
         .catch(error => {
             console.error(error)
-        })
+        })*/
       
+        var cropName="rice";
+        var location = allValues['location']; 
+        agent.add("We have found that + "+cropName+"crop is good. \n  You can find the nearest crop centers near you on this link \n https://3c4ce90e09da.ngrok.io/locate?crop="+cropName+"&location="+location);
+
     }
     var intentMap = new Map();
     intentMap.set('askParameters', askParameters)
