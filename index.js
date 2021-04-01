@@ -98,7 +98,7 @@ app.post('/', express.json(), (req,res)=>{
       
         var cropName="rice";
         var location = allValues['location']; 
-        agent.add("We have found that "+cropName+" crop is good to grow. \n  You can find the nearest crop centers near you on this link \n https://3c4ce90e09da.ngrok.io/locate?crop="+cropName+"&location="+location);
+        agent.add("We have found that "+cropName+" crop is good to grow. \n  You can find the nearest crop centers near you on this link \n http://kisan-mitra-client.surge.sh/locate?crop="+cropName+"&location="+location);
 
     }
     var intentMap = new Map();
